@@ -33,14 +33,14 @@
   - 🤔 W3Cと対立？
 - 🤔 RFCとW3Cを参照するのが基本なのかな
 
-## ヘッダ
+### ヘッダ
 
 - メールと同じ形式のヘッダ
   - フィールド名: 値
 - リクエストヘッダ
   - User-Agent: クライアントアプリケーション名
   - Referer: リクエスト時に見ていたページのURL
-  - Autorizaton: 認証情報
+  - Authorizaton: 認証情報
 - レスポンス
   - Content-Type: ファイルの種類（MIMEタイプ）
   - Content-Length: ボディのサイズ
@@ -87,5 +87,21 @@
 - `X-Content-Type-Options: nosniff` を使うとブラウザにContent-Typeの推測をさせなくできる
 - curl、`-d @ファイル名` でファイルの中身をリクエストボディにできるのか
 
+## ２章 HTTP/1.0のセマンティクス：ブラウザの基本機能の裏側
+
+- URLエンコード(x-www-form-urlencode)
+  - RFC3986とRFC1866で半角スペースのエンコードが異なる(%20と+)
+  - ブラウザはRFC1866、curlの `--data-urlencode` はRFC3896
+  - 🤔 昔ハマった記憶。。リライトルールとかだったかな。。
+- ファイルの送信(multipart/form-data)
+  - formのenctypeに指定する
+- Formを使ったリダイレクト
+  - パラメータをGETで引き回すのに難があるとき
+  - formをonloadでsubmitする
+  - 🤔 荒業感
+- コンテントネゴシエーション
+  - 言語やMIMEタイプをAccept系のリクエストヘッダに乗せる
+  - charset
+    - HTML5ならmetaタグでOK
 
 
