@@ -103,5 +103,10 @@
   - 言語やMIMEタイプをAccept系のリクエストヘッダに乗せる
   - charset
     - HTML5ならmetaタグでOK
+- 圧縮
+  - Brotli: Googleが公開した新しいアルゴリズム
+  - 🧐 brとgzipとdeflateくらい抑えておけばOKだろうか
+- Cookie
+  - 😣 httponlyの使い所わかんね。。
 
 
