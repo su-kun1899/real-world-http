@@ -1,12 +1,11 @@
 package main
 
 import (
-	"log"
-	"crypto/tls"
-	"time"
-	"io"
 	"fmt"
+	"io"
+	"log"
 	"net/http"
+	"time"
 )
 
 func handlerUpgrade(w http.ResponseWriter, r *http.Request) {
@@ -29,7 +28,7 @@ func handlerUpgrade(w http.ResponseWriter, r *http.Request) {
 	// プロトコルが変わるというレスポンスを送信
 	response := http.Response{
 		StatusCode: 101,
-		Header: make(http.Header),
+		Header:     make(http.Header),
 	}
 	response.Header.Set("Upgrade", "MyProtocol")
 	response.Header.Set("Connection", "Upgrade")
@@ -49,17 +48,10 @@ func handlerUpgrade(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main(){
-	server := &http.Server{
-		TLSConfig: &tls.Config{
-			ClientAuth: tls.RequireAndVerifyClientCert,
-			MinVersion: tls.VersionTLS12,
-		},
-		Addr: ":18443",
-	}
-	http.HandleFunc("/", handlerUpgrade)
-	log.Println("start http listening :18443")
-	err := server.ListenAndServeTLS("../tls/server.crt", "../tls/server.key")
-	log.Println(err)
+func main() {
+	var httpServer http.Server
+	http.HandleFunc("/upgrade", handlerUpgrade)
+	log.Println("start http listening :18888")
+	httpServer.Addr = ":18888"
+	log.Println(httpServer.ListenAndServe())
 }
-
