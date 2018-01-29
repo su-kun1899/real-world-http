@@ -406,3 +406,15 @@
   - UDPの上で動作するプロトコル
   - Google開発し、Chromeには搭載されている
   - 🤔 UDPの強いやつ考えればいいのかな。。
+- Fetch API
+  - XMLHttpRequestと同様のサーバーアクセスを行う関数
+  - CORSが扱いやすくなった
+    - Cross-Origin Resource Sharing
+  - JSのモダン非同期処理であるPromiseに準拠
+  - キャッシュが制御可能
+  - リダイレクトが制御可能
+  - リファラーのポリシーを設定可能
+  - Service Workerから利用可能
+    - ブラウザが Web ページとは別にバックグラウンドで実行するスクリプト
+    - 🙄 Service Workerなんだろ
+  
