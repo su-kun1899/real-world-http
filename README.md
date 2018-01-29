@@ -417,4 +417,19 @@
   - Service Workerから利用可能
     - ブラウザが Web ページとは別にバックグラウンドで実行するスクリプト
     - 🙄 Service Workerなんだろ
-  
+  - 対応するデータ型
+    - ArrayBuffer(固定長のバイナリ)
+    - Blob（ファイル等のバイナリ）
+    - FormData（HTMLフォーム）
+    - Object（JSON）
+    - string（Text文字列）
+  - 利用可能なメソッド
+    - CORS安全
+      - GET,HEAD,POST
+    - 禁止
+      - CONNECT,TRACE,TRACK
+  - CORSモードが指定可能
+    - cors,same-origin,no-cors
+  - 厳格な設定がデフォルトで、明示的に解除するという思想
+    - ☺️ よい
+
