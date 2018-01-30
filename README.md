@@ -453,4 +453,5 @@
     - cors,same-origin,no-cors
   - 厳格な設定がデフォルトで、明示的に解除するという思想
     - ☺️ よい
+  - 🤔 Fetch APIができたのに、nuxt.jsでaxios使うのが推奨されてるっぽいのはなんでだろー
 
