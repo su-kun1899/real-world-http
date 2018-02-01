@@ -454,4 +454,19 @@
   - 厳格な設定がデフォルトで、明示的に解除するという思想
     - ☺️ よい
   - 🤔 Fetch APIができたのに、nuxt.jsでaxios使うのが推奨されてるっぽいのはなんでだろー
+- Server-Sent Events
+  - HTML5の機能
+  - サーバからイベントを通知する
+    - Chunked形式の応用
+  - MIMEタイプは `text/event-stream`
+  - dataの内容はなんでもいいが、JSONがお多い
+  - イベントストリームのタグ
+    - id
+    - event
+    - data
+    - retry
+  - クライアントの再接続時はヘッダーにidを付けて送信
+    - `Last-Event-ID`
+    - 続きから受信できる
+
 
