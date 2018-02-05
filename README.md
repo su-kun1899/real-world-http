@@ -489,5 +489,30 @@
     - WebSocketを使うためのライブラリ
     - 後方互換性に強い
     - WebSocketのブラウザへの実装が進んだので、今後はあまり使われなさそう
-
-
+- WebRTC(Web Real-Time Communication)
+  - ブラウザ-サーバー間だけでなく、ブラウザ同士のP2P通信でも利用可
+  - TCPではなくUDPがメイン
+  - ユースケース
+    - ビデオ通話
+    - スクリーン共有
+    - IP電話端末
+    - etc
+  - リアルタイム性が高いので1対多のリアルタイム映像配信にも利用可
+    - HTTPのストリーミングは10~30秒程度遅延、WebRTCなら数秒で済む
+  - P2PでのCDN
+    - 同じ動画を見ているユーザとWebRTCのセッションを共有して配信する
+  - RTCPeerConnection
+    - WebRTCのベースはIP電話
+    - IP電話で使われてる技術をまとめてJavaScriptのAPIを定めたもの
+    - SDP(Session Description Protocol: セッション記述プロトコル)
+      - P2Pのネゴシエーション時に使用
+      - SDPのフォーマットで利用可能なコーデック情報やIP、ポートを共有
+      - 渡す手段は定められていない
+    - ICE (Interactive Connectivity Establishment)
+      - NATを超えてP2Pの接続を確立する
+        - NAT: プライベートIPをグローバルIPに変換する
+        - 違うネットワークでP2Pする場合、NAT超えをする必要がある（ローカルIPは外部から分からないので）
+        - STUNかTURNサーバどちらかが必要
+          - STUNはアクセス元のグローバルIPを教えるサーバ
+          - STUNにアクセスするとグローバルIPが分かるので、通信相手に伝えられる
+          - TURNはSTUNが使えない時に、TCPで中継してくれるサーバ
