@@ -517,3 +517,15 @@
           - STUNにアクセスするとグローバルIPが分かるので、通信相手に伝えられる
           - TURNはSTUNが使えない時に、TCPで中継してくれるサーバ
           - 🤔 ローカルIPは分からなくていいのかな
+  - メディアチャンネル
+    - 実際の通信で音声やビデオを扱う
+    - navigator.mediaDevices.getUserMedia()
+      - ウェブカメラやオーディオデバイスの設定と取得を行うブラウザAPI
+    - DTLS
+      - WebRTCはDTLS上のデータ通信
+      - D（データグラム）はUDPと同じ＝>暗号化したUDPがDTLS
+      - UDPは再送も整列もしない分TLSよりも高速
+        - WebRTCは遅くならない特性が必要
+    - WebRTC MediaチャネルはDTLS上でSRTPというプロトコルを使用
+      - セキュア(S)なリアルタイムプロトコル(RTP)
+      - UDPに順序の整列を追加
