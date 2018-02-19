@@ -672,3 +672,17 @@
     - 遅延が30秒ほど発生する
   - サポートされる環境が少ない
     - 特にデスクトップ
+- HLS前後の歴史
+  - 専用アプリケーションによるストリーミング
+    - Windows Media Player
+    - QuickTime
+  - FlashプレイヤーがサポートするRTMP（リアルタイム・メッセージ・プロトコル）
+    - HTTPとは異なる
+    - Youtube
+    - ニコニコ動画
+  - MicrosoftのSilverlight
+  - AppleによるHLSリリースとHTTPプログレッシブダウンロード
+    - MicrosoftのSmooth Streamingプロトコル（Silverlightに追加）
+    - AdobeのHDS（HTTPダイナミックストリーミング）
+    - FlashプレイヤーにHLSサポート追加
+    - モバイルAndroidにHLSサポート追加
