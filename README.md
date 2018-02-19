@@ -695,5 +695,8 @@
   - 目指す方向性はHLSとほぼ同じ（プログレッシブダウンロードを核としたストリーミング）
 - video.js
   - リファレンス実装
-
-
+- MPEG-DASHとHLSの再生方法の違い
+  - HLSはブラウザが.m3u8ファイルを解釈して再生するシステム
+  - MPEG-DASHはデータの解析をJavaScriptで行い、再生はHTML5 Media Source Extensionsを利用
+  - HLSとの差はなくなってきている
+  - 2016年、AppleがMPEG-DASHに譲歩する発表を行った
