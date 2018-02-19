@@ -686,3 +686,14 @@
     - AdobeのHDS（HTTPダイナミックストリーミング）
     - FlashプレイヤーにHLSサポート追加
     - モバイルAndroidにHLSサポート追加
+
+### MPEG-DASHによる動画ストリーミング再生
+
+- MPEG-DASH
+  - Dynamic Adaptive Streaming over HTTP
+  - Apple以外のブラウザベンダーによる標準化
+  - 目指す方向性はHLSとほぼ同じ（プログレッシブダウンロードを核としたストリーミング）
+- video.js
+  - リファレンス実装
+
+
