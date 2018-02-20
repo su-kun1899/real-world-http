@@ -700,3 +700,12 @@
   - MPEG-DASHはデータの解析をJavaScriptで行い、再生はHTML5 Media Source Extensionsを利用
   - HLSとの差はなくなってきている
   - 2016年、AppleがMPEG-DASHに譲歩する発表を行った
+- Media Presentation Description(MPD)
+  - MPEG-DASHのマニフェストファイル
+    - 拡張子は.mpd
+    - 実態はXML
+  - 複数ファイルに分割可能
+  - HLSはシンプルだが、MPEG-DASHはかなり複雑
+  - MP4BoxというツールでMPDファイルを作れる
+  - AWSのElastic TranscoderでMPEG-DASH、HLSの両方に変換できる
+
