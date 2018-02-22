@@ -19,7 +19,7 @@ func init() {
 
 // HTMLをブラウザに送信
 // 画像をプッシュする
-func handlerHtml(w http.ResponseWriter, r *http.Request) {
+func handlerHTML(w http.ResponseWriter, r *http.Request) {
 	// Pusherにキャスト可能であれば（HTTP/2で接続していたら）プッシュする
 	pusher, ok := w.(http.Pusher)
 	if ok {
@@ -36,7 +36,7 @@ func handlerImage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", handlerHtml)
+	http.HandleFunc("/", handlerHTML)
 	http.HandleFunc("/image", handlerImage)
 	fmt.Println("start http listening :18443")
 	err := http.ListenAndServeTLS(":18443", "../tls/server.crt", "../tls/server.key", nil)
