@@ -770,3 +770,14 @@
 - 利便性を落とすリスク
   - Content-Security-Policy-Report-Onlyヘッダー
   - チェックだけするモード
+
+#### Content-Security-PolicyとJavaScript製テンプレートエンジン
+
+- JavaScriptが発展して、ブラウザ環境でやることが増えた
+- いろいろなテンプレートライブラリ
+  - Hogan.js
+  - Vue.js
+  - Riot.js
+- 動的な関数生成はCSPのunsafe-evalに引っかかる
+  - プリコンパイルが必要
+
