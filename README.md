@@ -781,3 +781,14 @@
 - 動的な関数生成はCSPのunsafe-evalに引っかかる
   - プリコンパイルが必要
 
+#### Mixed Content
+
+- HTTP素材が混ざっている Mixed Content
+  - 広告や外部サービスのコンテンツ
+- HTTPSに修正しないで、Content-Security-Policyヘッダで対処できる
+  - upgrade-insecure-requestsディレクティブ
+    - HTTPと書かれていてもHTTPSで取得する
+  - block-all-mixed-content
+    - Mixed Contentをエラーにする
+- Content-Security-PolicyはHTMLのメタタグにも書ける
+
