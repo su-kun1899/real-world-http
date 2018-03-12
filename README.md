@@ -792,3 +792,21 @@
     - Mixed Contentをエラーにする
 - Content-Security-PolicyはHTMLのメタタグにも書ける
 
+#### クロスオリジンリソースシェアリング（CORS）
+
+- ドメインをまたいでリソースを共有する作法
+  - W3Cで定義
+  - XMLHttpRequestやFetch API
+- クライアントからサーバにアクセする直前までの権限確認
+- simple cross-origin request
+  - HTTPメソッドがシンプル
+    - GET, POST, HEAD
+  - ヘッダがシンプルヘッダのみで構成される
+    - Accept, Accept-Language, Content-Language, Content-Type
+  - Content-Typeの中身がいずれか
+    - application/x-www-form-urlencoded, multipart/form-data, text-plain
+- 複雑な通信ではプリフライトリクエストを実行
+  - OPTIONSメソッド
+- クロスオリジンの通信はデフォルトではCookieを送受信しない
+  - 明示的に設定する
+- プリフライトリクエストはキャッシュ機構がある
