@@ -873,3 +873,21 @@
   - ログイン失敗毎に待ち時間を延ばす
   - reCAPTHAなどでボットによる大量のログイン試行を防ぐ
 - ユーザがサービスごとに別のパスワードを設定するのが一番強固
+
+### ウエブアプリケーションのためのセキュリティガイドライン
+
+- X-Frame-Optionsヘッダー
+  - IFRAMEの使用を拒否する
+- Content-Security-Policyヘッダー
+  - リソースの取得先やスクリプトの実行など、ウェブサイトで必要な機能をサーバから設定
+- Strict-Transport-Securityヘッダー
+  - HTTPSでの接続を要請する
+- Public-Key-Pinsヘッダー
+  - サーバからの公開鍵を保持しておき、証明書の変更を検知する
+- Set-Cookieヘッダ
+  - httpOnlyやSecure属性で不正な利用を防ぐ
+- CSRF対策トークン
+- 2段階認証
+- GeoIP
+- X-Content-Type-Optionsヘッダー（IE8）
+- X-XSS-Protectionヘッダー（IE8）
